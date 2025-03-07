@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const ClientSchema = new mongoose.Schema({
     fullName:{type: String, required: true},
     cpf: {type: String, required: true, unique: true},
     login: {type: String, required: true, unique: true},
@@ -18,6 +18,6 @@ UserSchema.methods.comparePassword = async function(candidatePassword){
     return bcrypt.compare(candidatePassword, this.password);
 };
 
-const User = mongoose.model('User', UserSchema);
+const Client = mongoose.model('User', ClientSchema);
 
-module.exports = User;
+module.exports = Client;
