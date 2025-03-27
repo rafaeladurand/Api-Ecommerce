@@ -5,7 +5,7 @@ const productRoutes = require("./routes/productRoutes");
 const purchaseRoutes = require("./routes/purchaseRoutes");
 const userRoutes = require("./routes/userRoutes");
 const connectDatabase = require("./database/db.js");
-const perfilRoutes = require("./routes/perfilRoutes.js");
+const clientRoutes = require("./routes/clientRoutes.js");
 
 
 const app = express();
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use("/api/products", productRoutes);
 app.use("/api/purchases", purchaseRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api/perfis", perfilRoutes);
+app.use("/api/clients", clientRoutes);
 
 
 const port = 3000;
