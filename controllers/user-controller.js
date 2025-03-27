@@ -3,24 +3,17 @@ const User = require("../models/user");
 
 async function createUser(req, res) {
   try {
-    const { fullName, cpf, login, password } = req.body;
+    const { fullName, email, cpf, password } = req.body;
 
-    const userExists = await User.findOne({ $or: [{ login }, { cpf }] });
+    const userExists = await User.findOne({ $or: [{ email }, { cpf }] });
     if (userExists) {
-      return res
-        .status(400)
-        .json({ message: "Login ou identificador já existe." });
+      return res.status(400).json({ message: "Email ou CPF já cadastrados." });
     }
 
-    const newUser = new User({
-      fullName,
-      cpf,
-      login,
-      password,
-    });
-
+    const newUser = new User({ fullName, email, cpf, password });
     await newUser.save();
-    res.status(201).json({ message: "Usuário criado com sucesso." });
+
+    res.status(201).json({ message: "Usuário criado com sucesso.", user: newUser });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Erro interno do servidor." });
@@ -30,9 +23,9 @@ async function createUser(req, res) {
 //  /gustavo
 async function loginUser(req, res) {
   try {
-    const { login, password } = req.body;
+    const { email, password } = req.body;
 
-    const user = await User.findOne({ login });
+    const user = await User.findOne({ email });
     if (!user) {
       return res.status(401).json({ message: "Credenciais inválidas." });
     }
@@ -43,19 +36,12 @@ async function loginUser(req, res) {
     }
 
     const token = jwt.sign(
-      { userId: user._id, login: user.login },
+      { userId: user._id, email: user.email },
       process.env.JWT_SECRET,
-      { expiresIn: process.env.JWT_EXPIRES_IN || "1d" }
+      { expiresIn: "1d" }
     );
 
-    res.json({
-      token,
-      user: {
-        id: user._id,
-        login: user.login,
-        fullName: user.fullName,
-      },
-    });
+    res.json({ token, user: { id: user._id, email: user.email, fullName: user.fullName } });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Erro interno do servidor." });
