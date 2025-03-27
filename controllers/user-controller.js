@@ -125,12 +125,4 @@ async function getUserPurchases(req, res) {
   }
 }
 
-module.exports = {
-  createUser,
-  loginUser,
-  getUser,
-  getAllUsers,
-  updateUser,
-  deleteUser,
-  getUserPurchases,
-};
+module.exports = {createUser, loginUser,getUser,getAllUsers,  updateUser,bdeleteUser,getUserPurchases,};
