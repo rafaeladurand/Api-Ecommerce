@@ -1,18 +1,18 @@
-const jsw = require('jsonwebtoken')
+const jwt = require('jsonwebtoken');
 
-function isAuthenticated(req,res,next){
-    if(!req.headers.authorization){
-        return res.status(401).send()
-    }
-    const [,token] = req.headers.authorization.split(' ')
+function isAuthenticated(req, res, next) {
+  const authHeader = req.headers.authorization;
+  const token = authHeader && authHeader.split(' ')[1]; // Formato: Bearer token
 
-    const isMatchToken = jsw.verify(token, 'SECRET')
+  if (!token) {
+    return res.status(401).json({ message: 'Token não fornecido.' });
+  }
 
-    if(!isMatchToken){
-        return res.status(401).send()
-      
-    }
-    return next()
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) return res.status(403).json({ message: 'Token inválido.' });
+    req.user = decoded;
+    next();
+  });
 }
 
 module.exports = isAuthenticated;
