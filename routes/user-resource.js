@@ -6,10 +6,8 @@ const {createUser, loginUser, getUser, getAllUsers, updateUser, deleteUser, getU
 const authenticateToken = require("../middlewares/authMiddleware");
 
 // Rota para criação de usuário (pública)
-router.post("/register", createUser);
-
-// Rota de login (pública) // /gustavo
-router.post("/login", loginUser);
+userRouter.post("/register", createUser);
+userRouter.post("/login", loginUser);
 
 // Rotas protegidas com autenticação JWT // /gustavo
 router.get("/", authenticateToken, getAllUsers);
