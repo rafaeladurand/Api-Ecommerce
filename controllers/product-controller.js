@@ -2,31 +2,17 @@ const Product = require("../models/product");
 
 async function createProduct(req, res) {
   try {
-    const {
-      name,
-      currentPrice,
-      promotionalPrice,
-      type,
-      description,
-      expirationDate,
-    } = req.body;
+    const { name, price, description, image } = req.body;
 
     const productExists = await Product.findOne({ name });
     if (productExists) {
       return res.status(400).json({ message: "Produto já existe." });
     }
 
-    const newProduct = new Product({
-      name,
-      currentPrice,
-      promotionalPrice,
-      type,
-      description,
-      expirationDate,
-    });
-
+    const newProduct = new Product({ name, price, description, image });
     await newProduct.save();
-    res.status(201).json({ message: "Produto criado com sucesso." });
+
+    res.status(201).json({ message: "Produto criado com sucesso.", product: newProduct });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Erro interno do servidor." });
@@ -58,29 +44,20 @@ async function getAllProducts(req, res) {
 
 async function updateProduct(req, res) {
   try {
-    const {
-      name,
-      currentPrice,
-      promotionalPrice,
-      type,
-      description,
-      expirationDate,
-    } = req.body;
+    const { name, price, description, image } = req.body;
     const product = await Product.findById(req.params.id);
 
     if (!product) {
       return res.status(404).json({ message: "Produto não encontrado." });
     }
 
-    product.name = name || product.name;
-    product.currentPrice = currentPrice || product.currentPrice;
-    product.promotionalPrice = promotionalPrice || product.promotionalPrice;
-    product.type = type || product.type;
-    product.description = description || product.description;
-    product.expirationDate = expirationDate || product.expirationDate;
+    if (name) product.name = name;
+    if (price) product.price = price;
+    if (description) product.description = description;
+    if (image) product.image = image;
 
     await product.save();
-    res.json({ message: "Produto atualizado com sucesso." });
+    res.json({ message: "Produto atualizado com sucesso.", product });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Erro interno do servidor." });
@@ -100,10 +77,4 @@ async function deleteProduct(req, res) {
   }
 }
 
-module.exports = {
-  createProduct,
-  getProduct,
-  getAllProducts,
-  updateProduct,
-  deleteProduct,
-};
+module.exports = {createProduct, getProduct, getAllProducts, updateProduct, deleteProduct,};
