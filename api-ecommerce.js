@@ -1,14 +1,18 @@
-require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
-const productRoutes = require("./routes/productRoutes");
-const purchaseRoutes = require("./routes/purchaseRoutes");
-const userRoutes = require("./routes/userRoutes");
+const productRoutes = require("./routes/product-route.js");
+const purchaseRoutes = require("./routes/purchase-route.js");
+const userRoutes = require("./routes/user-route.js");
 const connectDatabase = require("./database/db.js");
-const clientRoutes = require("./routes/clientRoutes.js");
+const dotenv = require("dotenv");
+const cors = require("cors");
 
+
+dotenv.config();
 
 const app = express();
+app.use(cors()); 
+
 connectDatabase();
 
 app.use(bodyParser.json());
@@ -16,7 +20,6 @@ app.use(bodyParser.json());
 app.use("/api/products", productRoutes);
 app.use("/api/purchases", purchaseRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api/clients", clientRoutes);
 
 
 const port = 3000;

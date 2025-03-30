@@ -5,10 +5,7 @@ const connectDatabase = () => {
 
   mongoose
     .connect(
-      "mongodb+srv://root:root@fase1.0fpkd.mongodb.net/?retryWrites=true&w=majority&appName=Fase1",
-      { useNewUrlParser: true, useUnifiedTopology: true } 
-      // Usa o novo parser de URL do MongoDB
-      // Habilita o novo mecanismo de gerenciamento de conexões
+      "mongodb+srv://root:root@gomarketcluster.57qtd0e.mongodb.net/?retryWrites=true&w=majority&appName=GoMarketCluster",
     )
     .then(() => console.log("MongoDB Atlas Connected"))
     .catch((error) => console.log(error));
