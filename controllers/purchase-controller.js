@@ -4,7 +4,7 @@ const User = require("../models/user");
 
 async function createPurchase(req, res) {
   try {
-    const { userId, productIds } = req.body;
+    const { userId, productIds, isPaid = false } = req.body;
 
     const user = await User.findById(userId);
     if (!user) {
@@ -28,6 +28,7 @@ async function createPurchase(req, res) {
       products: productIds,
       finalPrices,
       totalPrice,
+      isPaid,
     });
 
     await newPurchase.save();
@@ -37,6 +38,7 @@ async function createPurchase(req, res) {
     res.status(500).json({ message: "Erro interno do servidor." });
   }
 }
+
 async function getProductPurchases(req, res) {
   try {
     const purchases = await Purchase.find({ products: req.params.productId });
@@ -91,10 +93,33 @@ async function deletePurchase(req, res) {
   }
 }
 
+async function updatePaymentStatus(req, res) {
+  try {
+    const { id } = req.params;
+    const { isPaid } = req.body;
+
+    const updated = await Purchase.findByIdAndUpdate(
+      id,
+      { isPaid },
+      { new: true }
+    );
+
+    if (!updated) {
+      return res.status(404).json({ message: "Compra não encontrada." });
+    }
+
+    res.json({ message: "Status de pagamento atualizado.", purchase: updated });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Erro interno do servidor." });
+  }
+}
+
 module.exports = {
   createPurchase,
   getAllPurchases,
   getPurchase,
   deletePurchase,
   getProductPurchases,
+  updatePaymentStatus,
 };

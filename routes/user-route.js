@@ -11,9 +11,9 @@ router.post("/login", loginUser);
 
 // Rotas protegidas com autenticação JWT // /gustavo
 router.get("/", authenticateToken, getAllUsers);
-router.get("/:id", authenticateToken, getUser);
-router.put("/:id", authenticateToken, updateUser);
-router.delete("/:id", authenticateToken, deleteUser);
-router.get("/:userId/purchases", authenticateToken, getUserPurchases);
+router.get("/:id", getUser);
+router.put("/:id",  updateUser);
+router.delete("/:id", deleteUser);
+router.get("/:userId/purchases", getUserPurchases);
 
 module.exports = router;

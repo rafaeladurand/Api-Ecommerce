@@ -23,6 +23,10 @@ const purchaseSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+    isPaid: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

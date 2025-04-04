@@ -8,5 +8,7 @@ router.get('/', getAllPurchases);
 router.get('/:id', getPurchase);
 router.delete('/:id', deletePurchase);
 router.get('/:productId/purchases', getProductPurchases);
+router.put("/:id/payment", updatePaymentStatus);
+
 
 module.exports = router;
