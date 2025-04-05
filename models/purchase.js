@@ -13,7 +13,8 @@ const purchaseSchema = new mongoose.Schema(
     }], 
     finalPrices: [{ 
       productId: mongoose.Schema.Types.ObjectId, 
-      price: Number 
+      price: Number,
+      quantity: { type: Number, required: true }, 
     }], 
     totalPrice: {
       type: Number,

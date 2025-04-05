@@ -11,21 +11,34 @@ async function createPurchase(req, res) {
       return res.status(404).json({ message: "Usuário não encontrado." });
     }
 
-    const products = await Product.find({ _id: { $in: productIds } });
-    if (products.length !== productIds.length) {
+    const productCounts = {};
+    productIds.forEach(id => {
+      productCounts[id] = (productCounts[id] || 0) + 1;
+    });
+
+    const uniqueProductIds = Object.keys(productCounts);
+
+    const products = await Product.find({ _id: { $in: uniqueProductIds } });
+    if (products.length !== uniqueProductIds.length) {
       return res.status(404).json({ message: "Um ou mais produtos não foram encontrados." });
     }
+
 
     const finalPrices = products.map(product => ({
       productId: product._id,
       price: product.price,
+      quantity: productCounts[product._id.toString()],
     }));
+    
 
-    const totalPrice = finalPrices.reduce((total, item) => total + item.price, 0);
+    const totalPrice = finalPrices.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
 
     const newPurchase = new Purchase({
       user: userId,
-      products: productIds,
+      products: productIds, 
       finalPrices,
       totalPrice,
       isPaid,
@@ -33,11 +46,13 @@ async function createPurchase(req, res) {
 
     await newPurchase.save();
     res.status(201).json({ message: "Compra registrada com sucesso.", purchase: newPurchase });
+
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Erro interno do servidor." });
   }
 }
+
 
 async function getProductPurchases(req, res) {
   try {
