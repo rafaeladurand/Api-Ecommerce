@@ -124,5 +124,30 @@ async function getUserPurchases(req, res) {
     res.status(500).json({ message: "Erro interno do servidor." });
   }
 }
+async function updatePassword(req, res) {
+  try {
+    const userId = req.params.id;
+    const { currentPassword, newPassword } = req.body;
 
-module.exports = {createUser, loginUser,getUser,getAllUsers,  updateUser,deleteUser,getUserPurchases,};
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "Usuário não encontrado." });
+    }
+
+    const isMatch = await user.matchPassword(currentPassword);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Senha atual incorreta." });
+    }
+
+    user.password = newPassword;
+    await user.save();
+
+    res.json({ message: "Senha atualizada com sucesso." });
+  } catch (error) {
+    console.error("Erro ao atualizar senha:", error);
+    res.status(500).json({ message: "Erro ao atualizar senha." });
+  }
+}
+
+
+module.exports = {createUser, loginUser,getUser,getAllUsers,  updateUser,deleteUser,getUserPurchases, updatePassword};
