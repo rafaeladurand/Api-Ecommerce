@@ -28,6 +28,7 @@ async function getProduct(req, res) {
     res.json(product);
   } catch (error) {
     console.error(error);
+    console.log("oi");
     res.status(500).json({ message: "Erro interno do servidor." });
   }
 }
