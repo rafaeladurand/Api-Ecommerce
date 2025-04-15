@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
+const aiService = require("../services/aiService");;
 
 async function createUser(req, res) {
   try {
@@ -149,5 +150,16 @@ async function updatePassword(req, res) {
   }
 }
 
+async function talkWithGemini(req, res) {
+  try {
+    const text = await aiService.prompt(req.body.prompt);
+    res.status(200).json({ response: text });
+  } catch (error) {
+    console.error("Erro ao conversar com Gemini:", error);
+    res.status(500).json({ message: "Erro ao gerar resposta." });
+  }
+}
 
-module.exports = {createUser, loginUser,getUser,getAllUsers,  updateUser,deleteUser,getUserPurchases, updatePassword};
+
+
+module.exports = {createUser, loginUser,getUser,getAllUsers,  updateUser,deleteUser,getUserPurchases, updatePassword, talkWithGemini};
