@@ -9,6 +9,7 @@ const cors = require("cors");
 const { v4: uuidv4 } = require("uuid");
 const http = require("http");
 const socketIo = require("socket.io");
+const aiRoutes = require("./routes/ai-routes.js");
 
 dotenv.config();
 connectDatabase();
@@ -23,6 +24,7 @@ app.use(cors());
 app.use("/api/products", productRoutes);
 app.use("/api/purchases", purchaseRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/ai", aiRoutes);
 
 const messages = [];
 

@@ -1,0 +1,29 @@
+ID: 67efd24bc9be571d25e4b00e
+Nome: Rafaela Durand
+Email: rafaela@gmail.com
+CPF: 148.440.214-60
+
+ID: 67efd649c9be571d25e4b013
+Nome: Gustavo Maciel
+Email: gustavo@gmail.com
+CPF: 123.456.789-10
+
+ID: 67f312cb947b48e671a0aaa5
+Nome: Emanuel Bacalhau
+Email: bacalhau@gmail.com
+CPF: 573.638.272-87
+
+ID: 67f51b5ef49f3f967aab1c54
+Nome: Samara Sonale 
+Email: samara@gmail.com
+CPF: 628.627.728-56
+
+ID: 67f669b46870377fc8293b20
+Nome: Iasmin Amorim 
+Email: iasmin@gmail.com
+CPF: 628.272.929-22
+
+ID: 67f732ff1e9a122bd4e4dabb
+Nome: Ana Maria 
+Email: ana@gmail.com
+CPF: 278.278.299-46

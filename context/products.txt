@@ -1,0 +1,69 @@
+ID: 67efda64c9be571d25e4b01c
+Nome: Açúcar Refinado
+Preço: R$ 5.50
+Descrição: Açúcar refinado de alta qualidade, ideal para adoçar bebidas e receitas. Pacote de 1kg.
+
+ID: 67efdc92c9be571d25e4b021
+Nome: Café Torrado e Moído
+Preço: R$ 18.90
+Descrição: Café torrado e moído de sabor intenso e aroma marcante. Pacote de 500g.
+
+ID: 67efdd77c9be571d25e4b029
+Nome: Sabão em Pó
+Preço: R$ 12.50
+Descrição: Sabão em pó para roupas, limpa profundamente e mantém as cores vivas. Pacote de 1kg.
+
+ID: 67efddc0c9be571d25e4b02f
+Nome: Detergente Líquido
+Preço: R$ 3.80
+Descrição: Detergente líquido concentrado para louças. Frasco de 500ml.
+
+ID: 67efdf61c9be571d25e4b036
+Nome: Desodorante Aerosol
+Preço: R$ 15.90
+Descrição: Desodorante aerosol de longa duração. Frasco de 150ml.
+
+ID: 67efdfb3c9be571d25e4b039
+Nome: Shampoo
+Preço: R$ 22.00
+Descrição: Shampoo hidratante para cabelos sedosos e brilhantes. Frasco de 400ml.
+
+ID: 67efdfdac9be571d25e4b03c
+Nome: Sabonete Líquido
+Preço: R$ 9.50
+Descrição: Sabonete líquido suave para limpeza e hidratação da pele. Frasco de 200ml.
+
+ID: 67efe037c9be571d25e4b03f
+Nome: Amaciante de Roupas
+Preço: R$ 14.90
+Descrição: Amaciante de roupas para maciez e perfume duradouro. Frasco de 2L.
+
+ID: 67efe08ec9be571d25e4b042
+Nome: Farinha de Trigo
+Preço: R$ 6.00
+Descrição: Farinha de trigo refinada para pães e massas. Pacote de 1kg.
+
+ID: 67efe1d2c9be571d25e4b045
+Nome: Biscoito Cream Cracker
+Preço: R$ 4.50
+Descrição: Biscoito cream cracker crocante e leve. Pacote de 200g.
+
+ID: 67efe206c9be571d25e4b048
+Nome: Manteiga com Sal
+Preço: R$ 10.90
+Descrição: Manteiga com sal cremosa e saborosa. Pote de 200g.
+
+ID: 67efe249c9be571d25e4b04b
+Nome: Queijo Mussarela Fatiado
+Preço: R$ 16.50
+Descrição: Queijo mussarela fatiado, ideal para sanduíches e lanches. Pacote de 200g..
+
+ID: 67efe26fc9be571d25e4b04e
+Nome: Suco de Laranja Integral
+Preço: R$ 8.90
+Descrição: Suco de laranja integral, sem conservantes. Garrafa de 1L.
+
+ID: 67efe29ac9be571d25e4b051
+Nome: Água Mineral com Gás
+Preço: R$ 2.50
+Descrição: Água mineral com gás, pura e refrescante. Garrafa de 500ml.

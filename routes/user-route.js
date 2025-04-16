@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {createUser, loginUser, getUser, talkWithGemini, getAllUsers, updateUser, deleteUser, getUserPurchases, updatePassword} = require("../controllers/user-controller");
+const {createUser, loginUser, getUser, getAllUsers, updateUser, deleteUser, getUserPurchases, updatePassword} = require("../controllers/user-controller");
 
 // Importa middleware de autenticação JWT // /gustavo
 const authenticateToken = require("../middleware/isAuthenticated.js");
@@ -16,7 +16,5 @@ router.put("/:id",  updateUser);
 router.delete("/:id", deleteUser);
 router.get("/:userId/purchases", getUserPurchases);
 router.put("/:id/password",  updatePassword);
-
-router.post("/ia", talkWithGemini)
 
 module.exports = router;

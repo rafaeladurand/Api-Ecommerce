@@ -1,0 +1,74 @@
+PedidoID: 67f31c63863e9e0341077a0e
+ClienteID: 67f312cb947b48e671a0aaa5
+Nome do Cliente: Emanuel Bacalhau
+Itens:
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 5.50
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 18.90
+Total: R$ 24.40
+Pago: Sim
+
+PedidoID: 67f3c8ff0fcea7405d24a847
+ClienteID: 67efd649c9be571d25e4b013
+Nome do Cliente: Gustavo Maciel
+Itens:
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 5.50
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 18.90
+Total: R$ 24.40
+Pago: Sim
+
+PedidoID: 67f3d7d2e90a6966559783dc
+ClienteID: 67efd24bc9be571d25e4b00e
+Nome do Cliente: Rafaela Durand
+Itens:
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 5.50
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 18.90
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 3.80
+Total: R$ 28.20
+Pago: Sim
+
+PedidoID: 67f51baef49f3f967aab1c5a
+ClienteID: 67f51b5ef49f3f967aab1c54
+Nome do Cliente: Samara Sonale 
+Itens:
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 5.50
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 18.90
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 12.50
+Total: R$ 36.90
+Pago: Sim
+
+PedidoID: 67f5c51a652c9e8abe89689d
+ClienteID: 67efd24bc9be571d25e4b00e
+Nome do Cliente: Rafaela Durand
+Itens:
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 5.50
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 12.50
+Total: R$ 18.00
+Pago: Sim
+
+PedidoID: 67f733311e9a122bd4e4dac2
+ClienteID: 67f732ff1e9a122bd4e4dabb
+Nome do Cliente: Ana Maria 
+Itens:
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 5.50
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 18.90
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 12.50
+Total: R$ 36.90
+Pago: Sim
+
+PedidoID: 67fb356829c6a4eb9a1040b9
+ClienteID: 67efd24bc9be571d25e4b00e
+Nome do Cliente: Rafaela Durand
+Itens:
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 5.50
+Total: R$ 5.50
+Pago: Sim
+
+PedidoID: 67fc4aa962e77e9c083f727e
+ClienteID: 67efd24bc9be571d25e4b00e
+Nome do Cliente: Rafaela Durand
+Itens:
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 5.50
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 12.50
+  - Produto: Produto removido | Quantidade: 1 | Preço Unitário: R$ 16.50
+Total: R$ 34.50
+Pago: Sim
